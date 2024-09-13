@@ -29,9 +29,14 @@ class UserDetailScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Name: ${user.name}',
-                    style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.teal),
+                    style: const TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.teal),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   buildInfoRow(Icons.person, 'Username', user.username),
                   buildInfoRow(Icons.email, 'Email', user.email),
                   buildInfoRow(Icons.phone, 'Phone', user.phone),
@@ -39,20 +44,28 @@ class UserDetailScreen extends StatelessWidget {
                   const Divider(height: 30, thickness: 1),
                   const Text(
                     'Address',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.teal),
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.teal),
                   ),
                   buildInfoRow(Icons.location_city, 'City', user.address.city),
                   buildInfoRow(Icons.home, 'Street', user.address.street),
                   buildInfoRow(Icons.home_work, 'Suite', user.address.suite),
                   buildInfoRow(Icons.mail, 'Zipcode', user.address.zipcode),
-                  buildInfoRow(Icons.map, 'Geo', 'Lat: ${user.address.geo.lat}, Lng: ${user.address.geo.lng}'),
+                  buildInfoRow(Icons.map, 'Geo',
+                      'Lat: ${user.address.geo.lat}, Lng: ${user.address.geo.lng}'),
                   const Divider(height: 30, thickness: 1),
                   const Text(
                     'Company',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.teal),
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.teal),
                   ),
                   buildInfoRow(Icons.business, 'Name', user.company.name),
-                  buildInfoRow(Icons.info, 'Catchphrase', user.company.catchPhrase),
+                  buildInfoRow(
+                      Icons.info, 'Catchphrase', user.company.catchPhrase),
                   buildInfoRow(Icons.business_center, 'BS', user.company.bs),
                 ],
               ),
@@ -75,7 +88,10 @@ class UserDetailScreen extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           Expanded(
-            child: Text(value, style: const TextStyle(fontSize: 16)),
+            child: Text(
+              value,
+              style: const TextStyle(fontSize: 16),
+            ),
           ),
         ],
       ),

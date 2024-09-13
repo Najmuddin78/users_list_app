@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'user_provider.dart';
 import 'user_detail_screen.dart';
-import 'user_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,18 +52,23 @@ class _UserListScreenState extends State<UserListScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('User List ', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text('User List ', 
+        style: TextStyle(fontWeight: FontWeight.bold,
+        color: Colors.white),
+        ),
         elevation: 0,
         backgroundColor: Colors.teal[400],
       ),
       body: userProvider.loading
-          ? const Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator(),
+          )
           : userProvider.error
               ? Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Failed to load users.', style: TextStyle(color: Colors.red)),
+                      const Text('Failed to load users.', style: TextStyle(color: Colors.red),
+                      ),
                       ElevatedButton(
                         onPressed: () {
                           userProvider.fetchUsers();
